@@ -187,6 +187,7 @@ Trunk Protocol = 802.1Q / ISL
 * (config)#`ip route <address> <mask> {<next-hop>|<interface>} {<AD>} [permanent]`
 
 ### rip
+* multi 224.0.0.9
 * (config)#`router rip`
 * (config-router)#`network 172.16.0.0`
 * (config-router)#`network 192.168.1.0`
@@ -198,6 +199,7 @@ Trunk Protocol = 802.1Q / ISL
 * #`show ip route`
 * #`show ip protocols`
 * #`debug ip rip`
+* (config-router)#`neighbor <ip-address(dest)>`
 
 ### EIGRP
 * multi 224.0.0.10
