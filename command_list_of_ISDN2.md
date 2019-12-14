@@ -363,4 +363,78 @@ Trunk Protocol = 802.1Q / ISL
 * (config)#`monitor session 1 source interface <interface-id>`
 * (config)#`monitor session 1 destination interface <interface-id>`
 
+### QoS
+* IntSer(RSVP) / DiffServ Best Effort
 
+#### DiffServ
+
+1. Clasification
+    * by ip-address / port / CoS / DSCP / IP Preference
+1. Marking
+    * switch = L2 or L3 marking
+    * router = L3 marking
+  >> L2 marking
+  * by CoS of 3bit in dot1Q tag
+  >> L3 marking
+  * by IP Precedence of 3bit or DSCP of 6 bit in ToS field
+1. Queuing
+    * FIFO
+    * PQ(Prioirty Queuing)
+    * WFQ(Weighted Fair Queuing)
+    * CBWFQ(Class Based WFQ)
+    * LLQ (Low Latency Queuing) = PQ & CBWFQ
+
+1. Port Base
+    * (config)#`mls qos`
+    * (config)#`interface gigabitethernet1/0/4`
+    * (config-if)#`mls qos cos 5`
+    * (config-if)#`srr-queue bandwidth limit 20`
+    * (config-if)#`priority-queue out`
+    * (config-if)#`exit`
+1. MQC Base
+    * (config)#`access-list 101 permit ip host 172.16.1.100 any`
+    * (config)#`access-list 102 permit ip host 172.16.1.200 any`
+    * (config)#`class-map match-all C-VOICE`
+    * (config-cmap)#`match access-group 101`
+    * (config)#`class-map match-all C-KANRI`
+    * (config-cmap)#`match access-group 102`
+    * (config)#`policy-map P-MARK`
+    * (config-pmap)#`class C-VOICE`
+    * (config-pmap-c)#`set dscp ef`
+    * (config-pmap)#`class C-KANRI`
+    * (config-pmap-c)#`set dscp af31`
+    * (config)#`interface FastEthernet 0/1`
+    * (config-if)#`service-policy input P-MARK`
+
+    * (config)#`class-map match-all C-EF`
+    * (config-cmap)#`match dscp ef`
+    * (config)#`class-map match-all C-AF31`
+    * (config-cmap)#`match dscp af31`
+    * (config)#`policy-map P-CHILD`
+    * (config-pmap)#`class C-EF`
+    * (config-pmap-c)#`priority percent 25`
+    * (config-pmap)#`class C-AF31`
+    * (config-pmap-c)#`bandwidth percent 10`
+    * (config-pmap)#`class class-default`
+    * (config-pmap-c)#`fair-queue`
+
+    * (config)#`access-list 111 permit ip any 172.16.1.0 0.0.0.255`
+    * (config)#`access-list 112 permit ip any 172.16.2.0 0.0.0.255`
+
+    * (config)#`class-map match-all C-CE2`
+    * (config-cmap)#`match access-group 111`
+    * (config)#`class-map match-all C-CE3`
+    * (config-cmap)#`match access-group 112`
+
+    * (config)#`policy-map P-PARENT`
+    * (config-pmap)#`class C-CE2`
+    * (config-pmap-c)#`shape average 15000000`
+    * (config-pmap-c)#`service-policy P-CHILD`
+    * (config-pmap)#`class C-CE3`
+    * (config-pmap-c)#`shape average 15000000`
+    * (config-pmap-c)#`service-policy P-CHILD`
+
+    * (config)#`interface FastEthernet 0/0`
+    * (config-if)#`service-policy output P-PARENT`
+
+    
