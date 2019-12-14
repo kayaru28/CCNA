@@ -259,6 +259,7 @@ Trunk Protocol = 802.1Q / ISL
 * Hellow 30s / Dead 120s
 * Hello/DBD/LSR/LSU/LSAck
 * priority 1 [0,255]
+* area [0,4294967295(2^32-1)]
 1. (config)#`router ospf <process-id>`
 1. (config-router)#`network <address> <wildcard-mask> area <area-id>`
 1. (config-router)#`passive-interface fastethernet 0`
