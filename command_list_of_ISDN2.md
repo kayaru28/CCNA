@@ -258,7 +258,9 @@ Trunk Protocol = 802.1Q / ISL
 
 ### OSPF
 * multi 224.0.0.5/224.0.0.6
-* Hellow 30s / Dead 120s
+* BMA  Hello 30s / Dead 120s
+* PtoP Hello 10s / Dead 40s
+* NBMA Hello 10s / Dead 40s
 * Hello/DBD/LSR/LSU/LSAck
 * priority 1 [0,255]
 * area [0,4294967295(2^32-1)]
