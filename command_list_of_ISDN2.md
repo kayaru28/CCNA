@@ -1,3 +1,11 @@
+## MAC ADDRESS
+* (config)#`mac address-table static <mac-address> vlan <vlan> interface <interface-id>
+* (config)#`mac address-table aging-time <time> vlan <vlan>`
+* #`show mac address-table [dynamic|static]`
+* #`show mac address-table aging-time`
+
+
+
 ## VLAN
 Trunk Protocol = 802.1Q / ISL
 
