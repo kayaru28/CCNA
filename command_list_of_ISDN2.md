@@ -314,7 +314,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config-if)#`ppp authentication {chap|pap|chap pap|pap chap}`
 * #`debug ppp authentication`
 
-## flame relay
+### flame relay
 * (config-if)#`encapsulation frame-relay [cisco|ietf]`
 * (config-if)#`frame-relay lmi-type {cisco|ansi|q333a}`
 * (config-if)#`[no] frame-relay inverse-arp <protocol> <dlci>`
@@ -343,3 +343,10 @@ Trunk Protocol = 802.1Q / ISL
 * (config-if)#`tunnel source {<ip-address>|<interface>}`
 * (config-if)#`tunnel destination <ip-address>`
 * (config-if)#`tunnel mode grp ip`
+
+## Others
+### SPAN
+* (config)#`monitor session 1 source interface <interface-id>`
+* (config)#`monitor session 1 destination interface <interface-id>`
+
+
