@@ -165,6 +165,7 @@ Trunk Protocol = 802.1Q / ISL
 * priority > ip address
 * Hellow 3s 224.0.0.2
 * Hold 10s
+
 > Three steps
 1. (config-if)#`standby [<group-num>] ip [<ip-address>]` group-num 0 
 1. (config-if)#`standby [<group-num>] priority <priority>` priority 100 [0,255]
@@ -183,6 +184,7 @@ Trunk Protocol = 802.1Q / ISL
 * AVF/AVG
 * Hellow 3s 224.0.0.102
 * Hold 10s
+
 > For Steps
 1. (config-if)#`glbp <group-num> ip [<ip-address>]`
 1. (config-if)#`glbp <group-num> priority <priority>`
@@ -319,6 +321,7 @@ Trunk Protocol = 802.1Q / ISL
 * LCP / NCP
 * PAP / CHAP
 * (config-if)#`encapsulation PPP`
+
 > Tree steps for auth
 1. (config)#`hostname <hostname>`
 1. (config)#`username <username(dst)> password <password>`
