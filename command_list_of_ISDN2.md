@@ -17,6 +17,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config-if)#`switchport mode access`
 1. (config-if)#`switchport access vlan 2`
 
+
 * #`show vlan {[brief] | [id <vlan-id>]} [name <vlan-name>]`(*switch)
 * #`show interfaces fastethernet 0/3 switchport`
 * #`show mac address-table`
@@ -24,6 +25,7 @@ Trunk Protocol = 802.1Q / ISL
 ### trunk port
 > word=DTP
 * (config-if)#`switchport mode {dynamic desirable | dynamic auto}`
+
 > Three steps at switch
 1. (config-if)#`switchport trunk encapsulation {isl | dot1q | negotiate}`
 1. (config-if)#`switchport mode trunk `
