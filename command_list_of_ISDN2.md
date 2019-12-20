@@ -394,14 +394,12 @@ Trunk Protocol = 802.1Q / ISL
 1. Clasification
     * by ip-address / port / CoS / DSCP / IP Preference
 1. Marking
-    * switch = L2 or L3 marking
-    * router = L3 marking
-
->> L2 marking
-  * by CoS of 3bit in dot1Q tag
-
->> L3 marking
-  * by IP Precedence of 3bit or DSCP of 6 bit in ToS field
+  * switch = L2 or L3 marking
+  * router = L3 marking
+    > L2 marking
+    * by CoS of 3bit in dot1Q tag
+    > L3 marking
+    * by IP Precedence of 3bit or DSCP of 6 bit in ToS field
   
 1. Queuing
     * FIFO
