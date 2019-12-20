@@ -33,7 +33,7 @@ Trunk Protocol = 802.1Q / ISL
 * #`show interfaces [<interface-id>] trunk`
 * #`show interfaces [<interface-id>] switchport`
 * #`show vlan {[brief] | [id <vlan-id>]} [name <vlan-name>]`(*switch)
-* #`show interfaces vlan <vlan-name>
+* #`show interfaces vlan <vlan-name>`
 * #`show run`
 * (config-if)#`switchport trunk native vlan <vlan-id>`
 * (config-if)#`switchport trunk allowed vlan {add|all|except|remobe} <vlan-id>`  
@@ -402,6 +402,7 @@ Trunk Protocol = 802.1Q / ISL
 
 >> L3 marking
   * by IP Precedence of 3bit or DSCP of 6 bit in ToS field
+  
 1. Queuing
     * FIFO
     * PQ(Prioirty Queuing)
