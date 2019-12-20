@@ -302,15 +302,16 @@ Trunk Protocol = 802.1Q / ISL
 > Two steps authentication if
 1. (config-if)#`ip ospf authentication [message-digest | null]`
 1. (config-if)#`ip ospf authentication-key <password>`
-   (config-if)#`ip ospf message-digest-key <key-id> md5 <password>`
+1. (config-if)#`ip ospf message-digest-key <key-id> md5 <password>`
 
 > Two steps authentication area
 1. (config-router)#`area <area-id> authentication [message-digest]`
 1. (config-if)#`ip ospf authentication-key <password>`
-   (config-if)#`ip ospf message-digest-key <key-id> md5 <password>`
+1. (config-if)#`ip ospf message-digest-key <key-id> md5 <password>`
 
 > OSPFv3
 * FF02::5,FF02::6
+
 1. (config)#`ipv6 router ospf <process-id>`
 1. (config-rtr)#`router-id <x.x.x.x>`
 1. (config-if)#`ipv6 ospf <process-id> area <area-id>`
