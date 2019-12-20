@@ -15,8 +15,8 @@ Trunk Protocol = 802.1Q / ISL
 1. (config)#`vlan 1,2,10-20,40`
 1. (config-vlan)#`name <vlan-name>`
 1. (config-if)#`switchport mode access`
-1. (config-if)#`switchport access vlan 2`  
-> Commands
+1. (config-if)#`switchport access vlan 2`
+
 * #`show vlan {[brief] | [id <vlan-id>]} [name <vlan-name>]`(*switch)
 * #`show interfaces fastethernet 0/3 switchport`
 * #`show mac address-table`
@@ -29,6 +29,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config-if)#`switchport trunk encapsulation {isl | dot1q | negotiate}`
 1. (config-if)#`switchport mode trunk `
 1. (config-if)#`switchport nonegotiate`
+
 * #`show interfaces [<interface-id>] trunk`
 * #`show interfaces [<interface-id>] switchport`
 * #`show vlan {[brief] | [id <vlan-id>]} [name <vlan-name>]`(*switch)
@@ -131,6 +132,7 @@ Trunk Protocol = 802.1Q / ISL
 1. discarding
 1. learnign
 1. forwarding
+
 * (config)#`spanning-tree mode rapid-pvst`
 
 ## EtherChannel
@@ -148,13 +150,15 @@ Trunk Protocol = 802.1Q / ISL
 1. (config-if-range)#`switchport mode access`
 1. (config-if-range)#`switchport access vlan 10`
 1. (config-if-range)#`channel-group 3 mode on`
+
 > L3
-1. (config)#`interface port-channel <group-num>
+1. (config)#`interface port-channel <group-num>`
 1. (config-if)#`no switchport`
 1. (config-if)#`ip address <ip-address> <subnet-mask>`
 1. (config)#`interface range fastethernet 0/1 - 2`
 1. (config-if-range)#`no switch-port`
 1. (config-if-range)#`channel-group <group-num> mode {on|desirable|auto|active|passive}`
+
 * (config)#`port-channel load-balance <method>`
 * method = src-/dst-/src-dst- + mac/ip/port
 * #`show etherchannel [summary]`
@@ -174,6 +178,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config-if)#`standby [<group-num>] ip [<ip-address>]` group-num 0 
 1. (config-if)#`standby [<group-num>] priority <priority>` priority 100 [0,255]
 1. (config-if)#`standby [<group-num>] preempt`
+
 * #`show standby [<interface-type>] [<group-numvwe>] [brief]`
 * #`debug standby`
 * (config-if)#`standby [<group-num>] authentication <word>`
@@ -194,6 +199,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config-if)#`glbp <group-num> priority <priority>`
 1. (config-if)#`glbp <group-num> preempt`
 1. (config-if)#`glbp <group-num> load-balancing [host-dependent|roud-robin|weighted]`
+
 * #`show glbp [<interface-type>] [<group-numvwe>] [brief]`
 
 ## routing
@@ -225,6 +231,7 @@ Trunk Protocol = 802.1Q / ISL
 > Two steps
 1. (config)#`router eigrp <as-num>`
 1. (config-router)#`network <network-num> [<wildcard-mask>]`
+
 * #`show ip protocols`
 * #`show ip eigrp neighbors`
 * #`show ip route [eigrp]`
@@ -238,6 +245,7 @@ Trunk Protocol = 802.1Q / ISL
 * (config-router)#`maximum-paths <value>`
 * (config-router)#`variance <multiplier>` * multi of FD
 * (config-router)#`auto-summary
+
 > Five steps`
 1. (config)#`key chain <name-of-chain>`
 1. (config-keychain)#`key <key-id>` 0~2147483647
@@ -246,6 +254,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config-keychain-key)#`send-lifetime <start-time> {<end-time>|inginite|duration <seconds>}`
 1. (config-if)#`ip authentication mode eigrp <as-number> md5`
 1. (config-if)#`ip authentication key-chain eigrp <as-number> <name-of-chain>`
+
 * (config-router)#`shutdown`
 
 > EIGRPv6
@@ -253,6 +262,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config)#`ipv6 router eigrp <as-num>`
 1. (config-if)#`ipv6 eigrp <as-number>`
 1. (config-router)#`eigrp router-id <x.x.x.x>`
+
 * #`show ipv6 protocols`
 * #`show ipv6 eigrp neighbors`
 * #`show ipv6 route [eigrp]`
@@ -268,12 +278,14 @@ Trunk Protocol = 802.1Q / ISL
 * Hello/DBD/LSR/LSU/LSAck
 * priority 1 [0,255]
 * area [0,4294967295(2^32-1)]
+
 1. (config)#`router ospf <process-id>`
 1. (config-router)#`network <address> <wildcard-mask> area <area-id>`
 1. (config-router)#`passive-interface fastethernet 0`
 1. (config-router)#`default-information originate [always]`
 1. (config-if)#`ip ospf <process-id> area <area-id>`
 1. (config-if)#`ip ospf cost 100`
+
 * #`show ip protocols`
 * #`show ip ospf`
 * #`show ip ospf neighbor`
@@ -302,6 +314,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config)#`ipv6 router ospf <process-id>`
 1. (config-rtr)#`router-id <x.x.x.x>`
 1. (config-if)#`ipv6 ospf <process-id> area <area-id>`
+
 * #`show ipv6 protocols`
 * #`show ipv6 ospf`
 * #`show ipv6 ospf neighbor`
@@ -332,6 +345,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config)#`hostname <hostname>`
 1. (config)#`username <username(dst)> password <password>`
 1. (config-if)#`ppp authentication {chap|pap|chap pap|pap chap}`
+
 * #`debug ppp authentication`
 
 ### flame relay
@@ -340,8 +354,10 @@ Trunk Protocol = 802.1Q / ISL
 * (config-if)#`[no] frame-relay inverse-arp <protocol> <dlci>`
 * (config-if)#`frame-relay map <protocol> <address> <dlci> {broadcast] [ietf]`
 * (config-if)#`no ip split-horizon [eigrp <as-number>]`
+
 1. (config)#`interface <interface>.<subinterface> {point-to-point|multipoint}`
 1. (config-subif)#`frame-relay interface-dlci <dlci-number>`
+
 * #`show interfaces`
 * #`show frame-relay lmi`
 * #`show frame-relay pvc`
@@ -379,9 +395,11 @@ Trunk Protocol = 802.1Q / ISL
 1. Marking
     * switch = L2 or L3 marking
     * router = L3 marking
-  >> L2 marking
+
+>> L2 marking
   * by CoS of 3bit in dot1Q tag
-  >> L3 marking
+
+>> L3 marking
   * by IP Precedence of 3bit or DSCP of 6 bit in ToS field
 1. Queuing
     * FIFO
