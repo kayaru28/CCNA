@@ -16,8 +16,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config-vlan)#`name <vlan-name>`
 1. (config-if)#`switchport mode access`
 1. (config-if)#`switchport access vlan 2`  
-
-
+> Commands
 * #`show vlan {[brief] | [id <vlan-id>]} [name <vlan-name>]`(*switch)
 * #`show interfaces fastethernet 0/3 switchport`
 * #`show mac address-table`
@@ -37,6 +36,7 @@ Trunk Protocol = 802.1Q / ISL
 * #`show run`
 * (config-if)#`switchport trunk native vlan <vlan-id>`
 * (config-if)#`switchport trunk allowed vlan {add|all|except|remobe} <vlan-id>`
+
 > Three steps at router
 * (config)#`interface fastethernet 0/0.100`
 * (config-subif)#`encapsulation dot1q <vlan-id> [native]`
@@ -45,6 +45,7 @@ Trunk Protocol = 802.1Q / ISL
 * #`show ip route`
 * #`show vlans [<vlan-id>]`
 * #`show vlan-switch [brief]`
+
 > Two steps at L3switch
 1. (config)#`ip routing`
 1. (config)#`interface vlan <vlan-id>`
