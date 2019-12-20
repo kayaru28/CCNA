@@ -15,7 +15,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config)#`vlan 1,2,10-20,40`
 1. (config-vlan)#`name <vlan-name>`
 1. (config-if)#`switchport mode access`
-1. (config-if)#`switchport access vlan 2`
+1. (config-if)#`switchport access vlan 2`  
 
 
 * #`show vlan {[brief] | [id <vlan-id>]} [name <vlan-name>]`(*switch)
