@@ -179,6 +179,7 @@ Trunk Protocol = 802.1Q / ISL
 1. (config-if)#`standby [<group-num>] priority <priority>` priority 100 [0,255]
 1. (config-if)#`standby [<group-num>] preempt`
 
+* (config-if)#`standby [<group-num>] preempt {delay minimum {second}}`
 * #`show standby [<interface-type>] [<group-numvwe>] [brief]`
 * #`debug standby`
 * (config-if)#`standby [<group-num>] authentication <word>`
