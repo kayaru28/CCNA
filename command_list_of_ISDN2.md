@@ -382,6 +382,18 @@ Trunk Protocol = 802.1Q / ISL
 * (config-if)#`tunnel mode grp ip`
 
 ## Others
+
+### routing algorithm
+* OSPF  = SPF \ Dijkstra's algorithm 
+* RIP   = Bellman–Ford algorithm
+* EIGRP = Diffusing Update Algorithm (DUAL)
+
+### priority
+* Root Bridge = minimum priority
+* Root Port = minimum root path cost / source bridge id / source port id
+* Desg Port = minimum root path cost / source bridge id / source port id
+
+
 ### SPAN
 * (config)#`monitor session 1 source interface <interface-id>`
 * (config)#`monitor session 1 destination interface <interface-id>`
