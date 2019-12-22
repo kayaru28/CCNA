@@ -245,7 +245,8 @@ Trunk Protocol = 802.1Q / ISL
 * #`show ip protocols`
 * (config-router)#`maximum-paths <value>`
 * (config-router)#`variance <multiplier>` * multi of FD
-* (config-router)#`auto-summary
+* (config-router)#`auto-summary`
+* (config-router)#`metric weights 0 0 1 0 1 0`
 
 > Five steps`
 1. (config)#`key chain <name-of-chain>`
