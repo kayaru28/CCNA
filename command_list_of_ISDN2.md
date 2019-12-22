@@ -473,4 +473,12 @@ Trunk Protocol = 802.1Q / ISL
     * (config)#`interface FastEthernet 0/0`
     * (config-if)#`service-policy output P-PARENT`
 
-    
+### NetFlow version 5
+> key field
+* source ip
+* destination ip
+* source port
+* destination port
+* layer 3 protocol
+* ToS（Type of Service）
+* input interface
