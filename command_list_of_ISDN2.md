@@ -442,6 +442,7 @@ Trunk Protocol = 802.1Q / ISL
 * IEEE802.11 wireless LAN CSMA/CA
 * IEEE802.1Q trunk
 * IEEE802.1d STP
+* IEEE802.1w RSTP
 
 ### SPAN
 * (config)#`monitor session 1 source interface <interface-id>`
