@@ -404,6 +404,11 @@ Trunk Protocol = 802.1Q / ISL
 * Root Port = minimum root path cost / source bridge id / source port id
 * Desg Port = minimum root path cost / source bridge id / source port id
 
+### IEEE list
+* IEEE802.3  Ethernet CSMA/CD
+* IEEE802.11 wireless LAN CSMA/CA
+* IEEE802.1Q trunk
+* IEEE802.1d STP
 
 ### SPAN
 * (config)#`monitor session 1 source interface <interface-id>`
