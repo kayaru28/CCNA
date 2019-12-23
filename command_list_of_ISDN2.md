@@ -328,6 +328,39 @@ Trunk Protocol = 802.1Q / ISL
 > NBMA
 * (config-router)#`neighbor <ip-address>`
 
+### BGP
+> For messages
+* OPEN
+* UPDATE
+* KEEPALIVE hellw 60s holddown 180s
+* NOTIFICATION
+
+> Two status
+* Idle → Connect → Active
+* Idle → Connect → Open Sent → Open Confirm → Established
+
+* (config)#`show ip bgp neighbors`
+* (config)#`show ip bgp summary`
+* (config)#`show ip bgp`
+* (config)#`show ip route`
+
+* Path attribute = max Cisco WEIGHT > max LOCAL_PREF > Local Route > min AS_PATH > min ORIGIN > min MED
+
+1. (config)#`router bgp <as-number>` as-number=1~65535
+1. (config-router)#`neighbor <ip-address> remote-as <as-number>
+1. (config-router)#`network <ip-address> mask <subnet mask>
+
+* (config)#`router bgp <as-number>`
+* (config-router)#`timers bgp <keepalive-time(s)> <holdtime(s)>`
+* (config-router)#`neighbor <ip-address> timer <keepalive-time(s)> <holdtime(s)>`
+
+* (config-router)#`neighbor 10.2.2.2 update-source loopback 0`
+* (config-router)#`neighbor 10.2.2.2 ebgp-multihop 2`
+
+* (config)#`route-map map-tag permit | deny [ seq-number ]`
+* (config-route-map)#`match condition`
+* (config-route-map)#`set origin [ egp as-number | igp | incomplete ]`
+
 ## WAN
 ****
 ## Serial
