@@ -385,6 +385,15 @@ Trunk Protocol = 802.1Q / ISL
 
 ## Others
 
+### PPPoE
+* (config)#`interface fastethernet 0/0`
+* (config-if)#`pppoe-client dial-pool-number 10`
+* (config)#`interface Dialer1`
+* (config-if)#`mtu 1492`
+* (config-if)#`ip address negotiated`
+* (config-if)#`encapsulation ppp`
+* (config-if)#`dialer pool 10`
+
 ### routing algorithm
 * OSPF  = SPF \ Dijkstra's algorithm 
 * RIP   = Bellman–Ford algorithm
