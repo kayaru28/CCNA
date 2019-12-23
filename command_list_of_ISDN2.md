@@ -347,8 +347,8 @@ Trunk Protocol = 802.1Q / ISL
 * Path attribute = max Cisco WEIGHT > max LOCAL_PREF > Local Route > min AS_PATH > min ORIGIN > min MED
 
 1. (config)#`router bgp <as-number>` as-number=1~65535
-1. (config-router)#`neighbor <ip-address> remote-as <as-number>
-1. (config-router)#`network <ip-address> mask <subnet mask>
+1. (config-router)#`neighbor <ip-address> remote-as <as-number>`
+1. (config-router)#`network <ip-address> mask <subnet mask>`
 
 * (config)#`router bgp <as-number>`
 * (config-router)#`timers bgp <keepalive-time(s)> <holdtime(s)>`
