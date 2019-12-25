@@ -530,3 +530,8 @@ Trunk Protocol = 802.1Q / ISL
 * layer 3 protocol
 * ToS（Type of Service）
 * input interface
+
+### SNMP
+ * #`show snmp group`
+ * #`show snmp pending`
+
