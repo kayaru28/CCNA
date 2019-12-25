@@ -436,6 +436,7 @@ Trunk Protocol = 802.1Q / ISL
 * Root Bridge = minimum priority
 * Root Port = minimum root path cost / source bridge id / source port id
 * Desg Port = minimum root path cost / source bridge id / source port id
+* router id = max loopback addresss / interface address
 
 ### IEEE list
 * IEEE802.3  Ethernet CSMA/CD
