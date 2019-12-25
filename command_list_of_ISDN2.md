@@ -532,7 +532,12 @@ Trunk Protocol = 802.1Q / ISL
 * ToS（Type of Service）
 * input interface
 
+* #`show ip flow export`
+* #`show ip cash flow`
+
 ### SNMP
  * #`show snmp group`
  * #`show snmp pending`
+ * #`show snmp engineID`
+ 
 
