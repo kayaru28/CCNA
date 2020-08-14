@@ -7,7 +7,7 @@
 
 
 ## VLAN
-Trunk Protocol = 802.1Q / ISL
+* Trunk Protocol = 802.1Q / ISL
 
 ### access port
 
@@ -329,6 +329,7 @@ Trunk Protocol = 802.1Q / ISL
 * (config-router)#`neighbor <ip-address>`
 
 ### BGP
+
 > For messages
 * OPEN
 * UPDATE
